@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leandro Gabriel de Araujo | Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav aria-label="Menu principal">
+            <a class="logo" href="#sobre">Leandro Gabriel</a>
+
+            <button id="menuToggle" class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+                Menu
+            </button>
+
+            <!-- Menu obrigatório com navegação por âncoras para as quatro seções do portfólio. -->
+            <ul id="menuLinks">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+
+            <button id="toggleTema" class="theme-toggle" type="button" aria-label="Alternar tema">Tema</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="sobre">
+            <div class="container sobre-container">
+                <div class="sobre-img">
+                    <img src="assets/perfil.jpg" alt="Foto de Leandro Gabriel de Araujo">
+                </div>
+
+                <div class="sobre-texto">
+                    <span class="tag">Currículo online</span>
+                    <h1>Sobre mim</h1>
+
+                    <p>
+                        Olá! Meu nome é Leandro Gabriel de Araujo. Minha jornada profissional começou em 2016 como Jovem Aprendiz
+                        na área administrativa da Wickbold. Fui efetivado em 2017 e, com o tempo, passei também pela área operacional,
+                        atuando hoje como operador de empilhadeira, com experiência em controle de estoque e utilização de sistemas
+                        como SAP.
+                    </p>
+
+                    <p>
+                        Sempre tive facilidade com tecnologia e curiosidade para entender como sistemas e processos funcionam.
+                        Em 2025, iniciei minha graduação em Ciência da Computação, com foco em transição de carreira para a área
+                        de TI e desenvolvimento web.
+                    </p>
+
+                    <p>
+                        No meu tempo livre, gosto de jogar RPGs, atualmente Genshin Impact, além de assistir filmes e séries.
+                        Essas atividades também alimentam minha criatividade, raciocínio estratégico e interesse por experiências
+                        digitais bem construídas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="formacao">
+            <div class="container">
+                <span class="tag">Conhecimentos</span>
+                <h1>Formação</h1>
+
+                <div class="cards">
+                    <article class="card">
+                        <h2>Ciência da Computação</h2>
+                        <p>Bacharelado em andamento, iniciado em 2025, com foco em programação, lógica e desenvolvimento de sistemas.</p>
+                    </article>
+
+                    <article class="card">
+                        <h2>Técnico em Informática para Internet</h2>
+                        <p>Curso técnico realizado na ETEC entre 2017 e 2019, com base em desenvolvimento para web.</p>
+                    </article>
+
+                    <article class="card">
+                        <h2>Desenvolvimento Web</h2>
+                        <p>Estudos práticos em HTML5, CSS3 e JavaScript, aplicados neste portfólio pessoal.</p>
+                    </article>
+
+                    <article class="card">
+                        <h2>Inglês Intermediário</h2>
+                        <p>Leitura e compreensão em evolução constante, com prática por meio de séries, jogos e materiais técnicos.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <div class="container">
+                <span class="tag">Trabalhos</span>
+                <h1>Portfólio</h1>
+
+                <div class="cards">
+                    <article class="card projeto-card">
+                        <h2>Gerenciador de Estoque</h2>
+                        <p>
+                            Projeto interno de controle de estoque logistico em planilha inteligente, com automações em VBA inspiradas em
+                            rotinas de conferência e movimentação de materiais.
+                        </p>
+                        <span class="status-projeto">Projeto desenvolvido localmente</span>
+                    </article>
+
+                    <article class="card projeto-card">
+                        <h2>Portfólio Online</h2>
+                        <p>
+                            Site pessoal desenvolvido com HTML5, CSS3 e JavaScript puro para apresentar trajetória, formação,
+                            projetos e formulário de contato.
+                        </p>
+                        <a class="botao-link" href="https://github.com/Leandro-Gabriel99/portfolio-leandro-gabriel" target="_blank" rel="noopener">
+                            Ver repositório
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="container">
+                <span class="tag">Mensagem</span>
+                <h1>Contato</h1>
+
+                <!-- Formulário com validação em JavaScript e simulação de envio, conforme solicitado na atividade. -->
+                <form id="formContato" novalidate>
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome">
+
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com">
+
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem"></textarea>
+
+                    <p id="mensagemForm" class="mensagem-form" aria-live="polite"></p>
+
+                    <button type="submit">Enviar mensagem</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Leandro Gabriel de Araujo</p>
+        <a href="https://leandro-gabriel99.github.io/portfolio-leandro-gabriel/" target="_blank" rel="noopener">
+            GitHub Pages
+        </a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
