@@ -6,6 +6,7 @@ const formContato = document.getElementById("formContato");
 const mensagemForm = document.getElementById("mensagemForm");
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a[href^='#']");
+const submitButton = formContato.querySelector("button[type='submit']");
 
 // Alterna entre tema claro e escuro usando classes CSS.
 themeButton.addEventListener("click", () => {
@@ -57,17 +58,35 @@ formContato.addEventListener("submit", (event) => {
         return;
     }
 
+    if (nome.length < 3) {
+        mostrarMensagem("O nome deve ter pelo menos 3 caracteres.", "erro");
+        return;
+    }
+
     if (!emailValido(email)) {
         mostrarMensagem("Informe um e-mail válido, como usuario@dominio.com.", "erro");
         return;
     }
 
-    mostrarMensagem("Mensagem enviada com sucesso!", "sucesso");
-    formContato.reset();
+    if (mensagem.length < 10) {
+        mostrarMensagem("A mensagem deve ter pelo menos 10 caracteres.", "erro");
+        return;
+    }
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Enviando...";
+    mostrarMensagem("Simulando envio da mensagem...", "info");
+
+    setTimeout(() => {
+        mostrarMensagem("Mensagem enviada com sucesso!", "sucesso");
+        formContato.reset();
+        submitButton.disabled = false;
+        submitButton.textContent = "Enviar mensagem";
+    }, 900);
 });
 
 // Destaca automaticamente no menu a seção que está sendo visualizada.
-window.addEventListener("scroll", () => {
+function atualizarSecaoAtiva() {
     let atual = "";
 
     sections.forEach((section) => {
@@ -79,6 +98,11 @@ window.addEventListener("scroll", () => {
     });
 
     navLinks.forEach((link) => {
-        link.classList.toggle("active", link.getAttribute("href") === `#${atual}`);
+        const ativo = link.getAttribute("href") === `#${atual}`;
+        link.classList.toggle("active", ativo);
+        link.setAttribute("aria-current", ativo ? "page" : "false");
     });
-});
+}
+
+window.addEventListener("scroll", atualizarSecaoAtiva);
+window.addEventListener("load", atualizarSecaoAtiva);

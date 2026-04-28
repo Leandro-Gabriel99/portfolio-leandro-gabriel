@@ -245,6 +245,15 @@ p {
     background: var(--primary-dark);
 }
 
+.botao-secundario {
+    color: var(--primary-dark);
+    background: rgba(37, 99, 235, 0.1);
+}
+
+.botao-secundario:hover {
+    background: rgba(37, 99, 235, 0.18);
+}
+
 /* Formulário validado pelo JavaScript antes da simulação de envio. */
 #formContato {
     display: flex;
@@ -301,6 +310,12 @@ p {
     transform: translateY(-1px);
 }
 
+#formContato button:disabled {
+    opacity: 0.75;
+    cursor: wait;
+    transform: none;
+}
+
 .mensagem-form {
     min-height: 24px;
     margin: 0;
@@ -313,6 +328,10 @@ p {
 
 .mensagem-form.sucesso {
     color: #15803d;
+}
+
+.mensagem-form.info {
+    color: var(--primary-dark);
 }
 
 footer {
