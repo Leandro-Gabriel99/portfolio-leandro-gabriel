@@ -12,7 +12,7 @@ themeButton.addEventListener("click", () => {
     body.classList.toggle("dark");
     const temaEscuro = body.classList.contains("dark");
 
-    themeButton.textContent = temaEscuro ? "Escuro" : "Tema";
+    themeButton.textContent = temaEscuro ? "Claro" : "Escuro";
     themeButton.setAttribute("aria-label", temaEscuro ? "Alternar para tema claro" : "Alternar para tema escuro");
 });
 
